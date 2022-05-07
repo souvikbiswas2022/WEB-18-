@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>FrontEnd</title>
+    <style>
+
+#container_2{
+    /* border:1px solid red; */
+    width:70%;
+    height:auto;
+    margin:auto;
+
+    display:grid;
+    gap:30px;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows:repeat(5,1fr);
+
+    margin-top:50px;
+}
+#container_2>div{
+    /* border:1px solid red; */
+    height:auto;
+    border-radius:15px;
+
+    text-align:center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+}
+
+
+
+p+img{
+    
+    width:45%;
+    margin-top:-20px;
+}
+img{
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+    width:100%;
+}
+h2{
+    font-family: 'Open Sans', sans-serif;
+    color:#0A0103;
+    margin-top:5px;
+}
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-size:16px;
+    color:#544D4f;
+    margin-top:-15px;
+}
+
+@media all and (min-width:777px) and (max-width:1023px){
+
+  
+#container_2{
+    /* border:1px solid red; */
+    width:90%;
+    /* height:auto;
+    margin:auto;
+
+    display:grid; */
+    gap:30px;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:repeat(6,1fr);
+
+    margin-top:50px;
+}
+   
+}
+@media all (min-width:200px) and (max-width:777px){
+
+#container_2 {
+  
+    width:90%;
+
+    display:grid;
+    gap:30px;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:repeat(6,1fr);
+
+    margin-top:50px;
+}
+}
+
+h1{
+    text-align: center;
+}
+#navbar{
+    display:flex;
+    justify-content: space-around;
+    background-color: green;
+    color:white;
+    font-size:50px;
+    font-weight: 100;
+    padding:30px;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+.same {
+    cursor:pointer;
+}
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div class="same"><a href=backend.html>Backend</a></div>
+        <div lass="same"><a href=frontend.html>Frontend</a></div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    
+    var investor=JSON.parse(localStorage.getItem("investorData"))||[]
+
+
+    var heading=document.createElement("h1")
+    heading.innerText="Strategic Investors"
+    document.querySelector("body").append(heading)
+
+    var container_div=document.createElement("div")
+    container_div.setAttribute("id","container_2")
+    document.querySelector("body").append(container_div)
+
+   
+
+    investor.forEach(function(element){
+     var box=document.createElement("div")
+     var pic=document.createElement("img")
+     pic.setAttribute("src",element.image)
+     var name=document.createElement("h2")
+     name.innerText=element.name
+     var role=document.createElement("p")
+     role.innerText=element.role
+     var logo=document.createElement("img")
+     logo.setAttribute("src",element.logo)
+
+     box.append(pic,name,role,logo)
+     
+     container_div.append(box)
+    })
+
+
+
+
+</script>

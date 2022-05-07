@@ -1,0 +1,104 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    form{
+        padding:40px;
+        border:1px solid red;
+        width:180px;
+        margin-top: 500px;
+        margin:auto;
+    }
+    #navbar{
+    display:flex;
+    justify-content: space-around;
+    background-color: green;
+    color:white;
+    font-size:50px;
+    font-weight: 100;
+    padding:30px;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+.same {
+    cursor:pointer;
+}
+</style>
+
+
+
+</head>
+<body>
+    <!-- name
+imgURL
+companyLogo
+role -->
+<div id="navbar">
+    <div class="same"><a href=backend.html>Backend</a></div>
+    <div lass="same"><a href=frontend.html>Frontend</a></div>
+</div>
+
+
+
+<form id="form">
+    <lable>Name</lable><br>
+    <input type="text" id="name" placeholder="Enter Name"/><br>
+    <lable>Put Image URL</lable><br>
+    <input type="text" id="imgURL" placeholder="Put URL"/><br>
+    <lable>Company Logo</lable><br>
+    <input type="text" id="companyLogo" placeholder="Put Company Logo URL"/><br>
+    <lable>Role</lable><br>
+    <input type="text" id="role" placeholder="Enter role"/>
+    <input type="submit">
+</form>
+
+  
+
+
+
+
+
+</body>
+</html>
+<script>
+//     var investor=[{image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",name:"Vijay Shekhar Sharma",role:"Founder & CEO",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+//     {image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",name:"Kunal Shah",role:"Founder",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"},{image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",name:"Amrish Rau",role:"CEO",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png"},
+{image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",name:"Sampad Swain",role:"Co-Founder & CEO",
+logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png"}
+// ]
+
+
+var investor= JSON.parse(localStorage.getItem("investorData")) || [];
+
+document.querySelector("#form").addEventListener("submit",myfun)
+
+function myfun(){
+
+    event.preventDefault()
+
+ var objArr={
+     image:form.imgURL.value,
+     name:form.name.value,
+     logo:form.companyLogo.value,
+     role:form.role.value 
+
+}
+investor.push(objArr)
+
+localStorage.setItem("investorData",JSON.stringify(investor))
+}
+
+
+
+
+
+
+</script>
