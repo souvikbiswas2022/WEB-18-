@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+*{
+    margin:0px;
+}
+        #main{
+            width:30%;
+            margin:auto;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding:30px;
+            margin-top:200px; 
+        }
+
+        input{
+            padding:15px 65% 15px 3px  ;
+            margin-bottom:20px;
+            border-radius: 8px;
+            border:1px solid rgb(216, 202, 202);
+            font-size: 16px;
+        }
+
+
+        h2{
+            text-align: center;
+        }
+
+        #sub{
+            padding:2% 44% ;
+            font-weight: bold;
+            font-size: 16px;
+            color:rgb(143, 139, 139) 
+        }
+
+        #sub :hover{
+            background-color: black;
+            color:white;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <form id="inpu">
+            <h2>Sign Up</h2>
+            <lable><p>Email</p></lable></br>
+            <input id="email" type="email" placeholder="Enter email"/></br>
+            <lable><p>Mobile No</p></lable></br>
+            <input id="mobile" type="number" placeholder="Enter your Mobile Number"/></br>
+            <lable><p>Password</p></lable></br>
+            <input id="password" type="password" placeholder="Enter password"/></br>
+            <input id="sub" type="submit" value="SIGN UP"/>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+
+
+    document.querySelector("#inpu").addEventListener("submit",mysouvik)
+    
+
+
+
+var arr=JSON.parse(localStorage.getItem("userD"))||[]
+
+function mysouvik(){
+    event.preventDefault();
+   
+     var obj={
+         
+         email_id:inpu.email.value,
+         mobile_no:inpu.mobile.value,
+         pass:inpu.password.value
+     }
+
+     arr.push(obj)
+     
+    localStorage.setItem("userD",JSON.stringify(arr))
+
+    inpu.email.value=""
+    inpu.mobile.value=""
+    inpu.password.value=""
+    window.location.href="signin.html"
+}
+
+
+
+
+
+
+</script>

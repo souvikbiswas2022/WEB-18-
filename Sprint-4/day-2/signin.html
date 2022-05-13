@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+*{
+    margin:0px;
+}
+        #main{
+            width:30%;
+            margin:auto;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding:30px;
+            margin-top:200px; 
+        }
+
+        input{
+            padding:15px 65% 15px 3px  ;
+            margin-bottom:20px;
+            border-radius: 8px;
+            border:1px solid rgb(216, 202, 202);
+            font-size: 16px;
+        }
+
+
+        h2{
+            text-align: center;
+        }
+
+        #sub{
+            padding:2% 44% ;
+            font-weight: bold;
+            font-size: 16px;
+            color:rgb(143, 139, 139) 
+        }
+
+        #sub :hover{
+            background-color: black;
+            color:white;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <form id="inpu">
+            <h2>Sign in</h2>
+            <lable><p>User name</p></lable></br>
+            <input id="user_name" type="text" placeholder="Enter user name"/></br>
+ 
+            <lable><p>Password</p></lable></br>
+            <input id="password" type="password" placeholder="Enter password"/></br>
+            <input id="sub" type="submit" value="SIGN IN"/>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+
+
+    document.querySelector("#inpu").addEventListener("submit",myfun)
+    
+   var arr2=JSON.parse(localStorage.getItem("userD"))
+
+   function myfun(){
+    event.preventDefault();
+    var status=false
+    arr2.forEach(function( element){
+    
+    if(inpu.user_name.value==element.email_id && inpu.password.value==element.pass)
+    {
+        status=true
+    }
+    })   
+
+    inpu.user_name.value=""
+    inpu.password.value=""
+
+    if(status==true){
+        alert("logn successfull")
+    }
+    else{
+        alert("Not successfull")
+    }
+
+    }
+
+
+
+</script>
+</body>
+</html>
